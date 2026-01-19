@@ -1,0 +1,9 @@
+*.h5
+.DS_Store
+*.pyc
+*.xml
+*.zip
+ingestion_res/*
+scoring_res/*
+/input_data/*
+*.pth

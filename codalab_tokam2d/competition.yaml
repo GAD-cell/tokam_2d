@@ -1,0 +1,60 @@
+version: 2
+title: Tokam2D - Structure detection in fusion plasma simulations
+description: Detecting turbulent structures in fusion plasma simulations
+image: logo.png
+registration_auto_approve: False  # if True, do not require approval from admin to join the comp
+
+terms: pages/terms.md
+pages:
+  - title: Description
+    file: pages/description.md
+  - title: Participation
+    file: pages/participate.md
+  - title: Seed
+    file: pages/seed.md
+
+tasks:
+  - index: 0
+    name: Tokam2D Developement Task
+    description: 'Tune models with training data, test against examples contained in public test data'
+    input_data: dev_phase/input_data/
+    reference_data: dev_phase/reference_data/
+    ingestion_program: ingestion_program/
+    scoring_program: scoring_program/
+
+solutions:
+  - index: 0
+    tasks:
+    - 0
+    path: solution/
+
+
+phases:
+  - name: Competition
+    description: 'Competition: tune your models.'
+    start: 10-07-2025
+    end: 03-09-2025
+    tasks:
+      - 0
+
+leaderboards:
+  - title: Results
+    key: main
+    columns:
+      - title: Test AP50
+        key: test
+        index: 0
+        sorting: asc
+      - title: Private Test AP50
+        key: private_test
+        index: 1
+        sorting: asc
+        hidden: True
+      - title: Train time
+        key: train_time
+        index: 2
+        sorting: desc
+      - title: Test time
+        key: test_time
+        index: 3
+        sorting: desc
